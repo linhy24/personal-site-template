@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/linhy24/portfolio-template.git/static/css/main.e6c13ad2.css",
-    "main.js": "/linhy24/portfolio-template.git/static/js/main.946c0180.js",
-    "static/js/787.1ed0c42c.chunk.js": "/linhy24/portfolio-template.git/static/js/787.1ed0c42c.chunk.js",
-    "index.html": "/linhy24/portfolio-template.git/index.html",
-    "main.e6c13ad2.css.map": "/linhy24/portfolio-template.git/static/css/main.e6c13ad2.css.map",
-    "main.946c0180.js.map": "/linhy24/portfolio-template.git/static/js/main.946c0180.js.map",
-    "787.1ed0c42c.chunk.js.map": "/linhy24/portfolio-template.git/static/js/787.1ed0c42c.chunk.js.map"
+    "main.css": "/portfolio-template/static/css/main.e6c13ad2.css",
+    "main.js": "/portfolio-template/static/js/main.09803015.js",
+    "static/js/787.1ed0c42c.chunk.js": "/portfolio-template/static/js/787.1ed0c42c.chunk.js",
+    "index.html": "/portfolio-template/index.html",
+    "main.e6c13ad2.css.map": "/portfolio-template/static/css/main.e6c13ad2.css.map",
+    "main.09803015.js.map": "/portfolio-template/static/js/main.09803015.js.map",
+    "787.1ed0c42c.chunk.js.map": "/portfolio-template/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.946c0180.js"
+    "static/js/main.09803015.js"
   ]
 }
