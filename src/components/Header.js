@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Button, Box, IconButton, Menu, MenuItem, Hidden, Fade } from '@mui/material';
+import { useTheme } from "@mui/material/styles";
 import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import Brightness3Icon from '@mui/icons-material/Brightness3'; // Moon icon
 import WbSunnyIcon from '@mui/icons-material/WbSunny'; // Sun icon
+import GitHubIcon from '@mui/icons-material/GitHub'; // GitHub icon
 import { motion } from 'framer-motion';
 import { styled } from '@mui/system';
 
@@ -17,6 +19,8 @@ const ToggleWrapper = styled(Box)(({ theme }) => ({
 }));
 
 function Header({ isDarkMode, toggleTheme }) {
+    const theme = useTheme();
+
     const [anchorEl, setAnchorEl] = useState(null);
 
     const handleClick = (event) => {
@@ -28,7 +32,7 @@ function Header({ isDarkMode, toggleTheme }) {
     };
 
     return (
-        <AppBar position="static" color="inherit" elevation={4} style={{ backdropFilter: 'blur(20px)', backgroundColor: isDarkMode ? 'rgba(50, 50, 50, 0.7)' : 'rgba(255, 255, 255, 0.7)' }}>
+        <AppBar position="static" color="inherit" elevation={4} style={{ backdropFilter: 'blur(20px)', backgroundColor: theme.palette.header.main }}>
             <Toolbar>
                 <Typography variant="h6" style={{ flexGrow: 1 }}>
                     Your Name
@@ -50,6 +54,13 @@ function Header({ isDarkMode, toggleTheme }) {
                             <Button color="inherit" component={Link} to="/contact">Contact</Button>
                         </Box>
                     </motion.div>
+                    <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+                        <Box mx={1}>
+                            <Button color="inherit" startIcon={<GitHubIcon />} href="https://github.com/linhy24/personal-site-template" target="_blank" rel="noopener noreferrer">
+                                View Source
+                            </Button>
+                        </Box>
+                    </motion.div>
                 </Hidden>
 
                 <Hidden mdUp>
@@ -62,9 +73,22 @@ function Header({ isDarkMode, toggleTheme }) {
                         open={Boolean(anchorEl)}
                         onClose={handleClose}
                     >
-                        <MenuItem onClick={handleClose} component={Link} to="/">About Me</MenuItem>
-                        <MenuItem onClick={handleClose} component={Link} to="/projects">Projects</MenuItem>
-                        <MenuItem onClick={handleClose} component={Link} to="/contact">Contact</MenuItem>
+                        <MenuItem onClick={handleClose} component={Link} to="/" style={{ justifyContent: 'center' }}>About Me</MenuItem>
+                        <MenuItem onClick={handleClose} component={Link} to="/projects" style={{ justifyContent: 'center' }}>Projects</MenuItem>
+                        <MenuItem onClick={handleClose} component={Link} to="/contact" style={{ justifyContent: 'center' }}>Contact</MenuItem>
+                        <MenuItem
+                            onClick={handleClose}
+                            component="a"
+                            href="https://github.com/linhy24/personal-site-template"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ justifyContent: 'center' }}
+                        >
+                            <Box display="flex" alignItems="center" justifyContent="center" width="100%">
+                                <GitHubIcon style={{ marginRight: '10px' }} />
+                                View Source
+                            </Box>
+                        </MenuItem>
                     </Menu>
                 </Hidden>
 

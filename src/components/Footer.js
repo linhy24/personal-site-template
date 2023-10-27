@@ -1,8 +1,9 @@
 import { Container, Typography } from '@mui/material';
+import { useTheme } from "@mui/material/styles";
 
 function Footer({ isDarkMode }) {
-    
-    const textColor = isDarkMode ? '#e0e0e0' : '#333';  // Setting text color based on the theme mode
+
+    const theme = useTheme();
 
     return (
         <footer style={{
@@ -17,12 +18,12 @@ function Footer({ isDarkMode }) {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            color: textColor,  // Use textColor here
+            color: theme.palette.text.primary,  // Use textColor here
             // Minimalistic translucent effect
-            backgroundColor: isDarkMode ? 'rgba(40, 40, 40, 0.7)' : 'rgba(240, 240, 240, 0.7)',
+            backgroundColor: theme.palette.header.main
         }}>
             <Container>
-                <Typography variant="body1" align="center" style={{ color: textColor }}>&copy; 2023 Your Name</Typography>
+                <Typography variant="body1" align="center" style={{ color: theme.palette.text.primary }}>&copy; 2023 Your Name</Typography>
             </Container>
         </footer>
     );

@@ -1,5 +1,4 @@
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
@@ -16,6 +15,9 @@ const lightTheme = createTheme({
         },
         secondary: {
             main: '#ffb74d',
+        },
+        header: {
+            main: 'rgba(255, 255, 255, 0.7)'
         },
         background: {
             default: 'linear-gradient(45deg, #E0E7FF 30%, #FFF3E0 90%)',
@@ -35,6 +37,9 @@ const darkTheme = createTheme({
         secondary: {
             main: '#90caf9',  // Light blue for contrast
         },
+        header: {
+            main: 'rgba(50, 50, 50, 0.7)'
+        },
         background: {
             default: 'linear-gradient(45deg, #1a1a1a 30%, #2c2c3e 90%)',  // Gradient from dark grey to subtle purple-grey
             paper: '#2c2c3e',    // Subtle purple-grey for elements
@@ -53,7 +58,7 @@ function App() {
         if (savedMode !== null) return savedMode === 'true';
         return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     });
-    
+
 
     const toggleTheme = () => {
         setIsDarkMode(prevMode => {
@@ -77,12 +82,12 @@ function App() {
 
     useEffect(() => {
         document.title = "Personal Site";
-    }, []);    
+    }, []);
 
     return (
         <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
             <CssBaseline />
-            <div style={{ minHeight: '100vh', background: isDarkMode ? darkTheme.palette.background.default : lightTheme.palette.background.default}}>
+            <div style={{ minHeight: '100vh', background: isDarkMode ? darkTheme.palette.background.default : lightTheme.palette.background.default }}>
                 <Router key={isDarkMode ? 'dark' : 'light'}>
                     <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
                     <Routes>
