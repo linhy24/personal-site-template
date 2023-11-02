@@ -10,11 +10,17 @@ As the standard practice of building a React app, the core part of project code 
 
 ## Logic of Dark Mode
 
-User's preference of whether choosing dark mode or not is remembered and stored in LocalStorage by default. You can easily change this by commenting out\
+Users' preference of whether choosing dark mode or not is remembered and stored in LocalStorage by default.
+
+You can easily change this by commenting out\
 `// const savedMode = localStorage.getItem('dark-mode');`\
 `// if (savedMode !== null) return savedMode === 'true';`\
-in `App.js`. Then, if the user ever refreshes the webpage, the theme will change to `prefer-color-scheme` of your system.
+in `App.js`.
+
+ Then, if users ever refresh the webpage, its theme will change to `prefer-color-scheme` of their system.
 
 ## Usage
 
-After clone this project to your local repo, run `npm install` to install the required node modules to start developing. The development process follows standard React development practices. Please refer to [official React documentation](https://react.dev/reference/react) for more guidance.
+After cloning this project to your local repo, run `npm install` to install the required node modules to start developing. The development process follows standard React development practices.
+
+Please refer to [official React documentation](https://react.dev/reference/react) for more guidance.
