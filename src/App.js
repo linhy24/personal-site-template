@@ -51,31 +51,27 @@ const darkTheme = createTheme({
 });
 
 function App() {
-
     const [isDarkMode, setIsDarkMode] = useState(() => {
-        // This will read from local storage or use the system preference if no setting was saved.
-        const savedMode = localStorage.getItem('dark-mode'); // corrected the key
+        // This will read from session storage or use the system preference if no setting was saved.
+        const savedMode = sessionStorage.getItem('dark-mode');
         if (savedMode !== null) return savedMode === 'true';
         return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     });
 
-
     const toggleTheme = () => {
         setIsDarkMode(prevMode => {
-            localStorage.setItem('dark-mode', String(!prevMode));
+            sessionStorage.setItem('dark-mode', String(!prevMode));
             return !prevMode;
         });
     };
 
     useEffect(() => {
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
         const handleChange = (event) => {
             setIsDarkMode(event.matches);
         };
 
         mediaQuery.addEventListener('change', handleChange);
-
         // Cleanup
         return () => mediaQuery.removeEventListener('change', handleChange);
     }, []);
@@ -100,9 +96,6 @@ function App() {
             </div>
         </ThemeProvider>
     );
-
-
 }
-
 
 export default App;
