@@ -10,14 +10,11 @@ As the standard practice of building a React app, the core part of project code 
 
 ## Logic of Dark Mode
 
-Users' preference of whether choosing dark mode or not is remembered and stored in LocalStorage by default.
+Users' darkmode preference is remembered in SessionStorage by default.
 
-You can easily change this by commenting out\
-`// const savedMode = localStorage.getItem('dark-mode');`\
-`// if (savedMode !== null) return savedMode === 'true';`\
-in `App.js`.
+You can easily change the behavior of dark mode by changing the keyword `sessionStorage` to `localStorage` in file `App.js`.
 
- Then, if users ever refresh the webpage, its theme will change to `prefer-color-scheme` of their system.
+ Then, users' darkmode preference will be remembered as long as the browser cache is not cleared. Users can close and reopen the tab, and theme preference stays.
 
 ## Usage
 
