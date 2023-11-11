@@ -1,5 +1,5 @@
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import AboutMe from './components/AboutMe';
@@ -87,9 +87,10 @@ function App() {
                 <Router key={isDarkMode ? 'dark' : 'light'}>
                     <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
                     <Routes>
-                        <Route path="/" element={<AboutMe />} />
-                        <Route path="/projects" element={<Projects />} />
-                        <Route path="/contact" element={<Contact />} />
+                        <Route path="/personal-site-template" element={<AboutMe />} />
+                        <Route path="/personal-site-template/about" element={<AboutMe />} />
+                        <Route path="/personal-site-template/projects" element={<Projects />} />
+                        <Route path="/personal-site-template/contact" element={<Contact />} />
                     </Routes>
                     <Footer isDarkMode={isDarkMode} />
                 </Router>

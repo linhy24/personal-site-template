@@ -41,17 +41,17 @@ function Header({ isDarkMode, toggleTheme }) {
                 <Hidden smDown>
                     <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                         <Box mx={1}>
-                            <Button color="inherit" component={Link} to="/">About Me</Button>
+                            <Button color="inherit" component={Link} to="/personal-site-template/about">About Me</Button>
                         </Box>
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                         <Box mx={1}>
-                            <Button color="inherit" component={Link} to="/projects">Projects</Button>
+                            <Button color="inherit" component={Link} to="/personal-site-template/projects">Projects</Button>
                         </Box>
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                         <Box mx={1}>
-                            <Button color="inherit" component={Link} to="/contact">Contact</Button>
+                            <Button color="inherit" component={Link} to="/personal-site-template/contact">Contact</Button>
                         </Box>
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
